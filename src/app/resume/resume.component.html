@@ -1,0 +1,316 @@
+<section class="bg-primary text-slate py-24 px-6 md:px-12 lg:px-24 border-t border-slate/10">
+  <div class="max-w-7xl mx-auto space-y-24">
+
+    <!-- ════════════ About Me (Brain animation LEFT, text RIGHT) ════════════ -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- LEFT: 3D Brain Animation (transparent, blends with page) -->
+      <div class="relative" style="height: 380px;">
+        <app-about-animation></app-about-animation>
+        <!-- Subtle label at bottom -->
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-accent-teal/70 font-semibold"></span>
+        </div>
+      </div>
+
+      <!-- RIGHT: About Me text -->
+      <div>
+        <div class="flex items-center space-x-4 mb-4">
+          <img
+            src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Smiling%20face%20with%20sunglasses/3D/smiling_face_with_sunglasses_3d.png"
+            alt="Cool Face" class="w-12 h-12 floating-3d drop-shadow-lg" />
+          <h2 class="text-4xl font-bold">About Me</h2>
+        </div>
+        <div class="h-1 w-16 bg-accent-green rounded-full mb-6"></div>
+        <div class="space-y-5 text-base font-light leading-relaxed text-slate/80">
+          <p>
+            I am a passionate Full Stack Developer with 3.7 years of hands-on experience in Java, Spring Boot, Angular,
+            and PostgreSQL. I specialize in building scalable, secure, and high-performance applications that solve
+            real-world business problems.
+          </p>
+          <p>
+            Currently working as a <strong class="text-accent-green font-semibold">Senior Engineer</strong> at Motherson
+            Technology Services Limited, I have played a key role in designing microservices architectures, optimizing
+            system performance using Redis caching, and modernizing legacy applications into robust, cloud-ready
+            systems.
+          </p>
+          <p>
+            My expertise spans the complete software development lifecycle — from requirement analysis through
+            development, testing, deployment, and production support. I thrive in Agile environments where collaboration
+            and continuous improvement are core values.
+          </p>
+          <p>
+            Outside of work, I continuously explore new technologies to stay aligned with industry trends and enhance my
+            technical capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════ Technical Skills (Desk Workspace LEFT, Skills RIGHT) ════════════ -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+      <!-- LEFT: Compact 3D Desk (sticky) -->
+      <div class="md:sticky md:top-28 space-y-4">
+        <!-- <div class="flex items-center gap-3 mb-2">
+          <img
+            src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Desktop%20computer/3D/desktop_computer_3d.png"
+            alt="Desk" class="w-9 h-9 floating-3d" />
+          <div>
+            <h3 class="text-xl font-bold text-slate">My Workspace</h3>
+            <p class="text-xs text-slate/45 font-light">Where ideas come to life</p>
+          </div>
+        </div> -->
+        <!-- Compact desk scene (300px tall) -->
+        <div style="height:500px;" class="rounded-2xl overflow-hidden border border-slate/8 shadow-md">
+          <app-desk-scene></app-desk-scene>
+        </div>
+      </div>
+
+      <!-- RIGHT: Skills grid -->
+      <div class="space-y-6">
+        <div class="flex items-center space-x-4 mb-2">
+          <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Toolbox/3D/toolbox_3d.png"
+            alt="Skills" class="w-12 h-12 floating-3d drop-shadow-lg" />
+          <div>
+            <h2 class="text-4xl font-bold">Technical Skills</h2>
+            <div class="h-1 w-16 bg-accent-teal rounded-full mt-1"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Backend -->
+          <div
+            class="relative group bg-white/40 p-5 rounded-2xl border border-white/50 shadow-sm transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"
+              class="absolute -bottom-4 right-2 w-28 h-28 opacity-[0.03] grayscale transition-all duration-700 group-hover:opacity-20 group-hover:grayscale-0 group-hover:rotate-12 group-hover:scale-110 pointer-events-none" />
+            <h3 class="text-base font-bold mb-3 text-accent-green relative z-10">Backend Development</h3>
+            <ul class="space-y-1.5 relative z-10">
+              @for(skill of backendSkills; track skill) { <li class="text-slate/80 font-light text-sm flex items-start">
+                <span class="text-accent-teal mr-2">•</span> {{skill}}</li> }
+            </ul>
+          </div>
+          <!-- Frontend -->
+          <div
+            class="relative group bg-white/40 p-5 rounded-2xl border border-white/50 shadow-sm transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+              alt="Angular"
+              class="absolute -bottom-4 -right-4 w-36 h-36 opacity-[0.03] grayscale transition-all duration-700 group-hover:opacity-20 group-hover:grayscale-0 group-hover:-rotate-6 group-hover:scale-110 pointer-events-none" />
+            <h3 class="text-base font-bold mb-3 text-accent-green relative z-10">Frontend Development</h3>
+            <ul class="space-y-1.5 relative z-10">
+              @for(skill of frontendSkills; track skill) { <li
+                class="text-slate/80 font-light text-sm flex items-start"><span class="text-accent-teal mr-2">•</span>
+                {{skill}}</li> }
+            </ul>
+          </div>
+          <!-- Databases -->
+          <div
+            class="relative group bg-white/40 p-5 rounded-2xl border border-white/50 shadow-sm transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"
+              class="absolute -bottom-2 -right-2 w-32 h-32 opacity-[0.03] grayscale transition-all duration-700 group-hover:opacity-20 group-hover:grayscale-0 group-hover:rotate-6 group-hover:scale-105 pointer-events-none" />
+            <h3 class="text-base font-bold mb-3 text-accent-green relative z-10">Databases &amp; Messaging</h3>
+            <ul class="space-y-1.5 relative z-10">
+              @for(skill of dbSkills; track skill) { <li class="text-slate/80 font-light text-sm flex items-start"><span
+                  class="text-accent-teal mr-2">•</span> {{skill}}</li> }
+            </ul>
+          </div>
+          <!-- Tools -->
+          <div
+            class="relative group bg-white/40 p-5 rounded-2xl border border-white/50 shadow-sm transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"
+              class="absolute top-4 right-4 w-16 h-16 opacity-[0.03] grayscale transition-all duration-700 group-hover:opacity-20 group-hover:grayscale-0 group-hover:rotate-12 group-hover:scale-110 pointer-events-none" />
+            <h3 class="text-base font-bold mb-3 text-accent-green relative z-10">Tools, Auth &amp; Others</h3>
+            <ul class="space-y-1.5 relative z-10">
+              <li class="text-slate/80 font-light text-sm flex items-start"><span class="text-accent-teal mr-2">•</span>
+                <strong>Tools:</strong>&nbsp;Git, Postman, IntelliJ, Agile</li>
+              <li class="text-slate/80 font-light text-sm flex items-start"><span class="text-accent-teal mr-2">•</span>
+                <strong>Security:</strong>&nbsp;JWT, OAuth 2.0, SSO</li>
+              <li class="text-slate/80 font-light text-sm flex items-start"><span class="text-accent-teal mr-2">•</span>
+                <strong>Misc:</strong>&nbsp;Excel Automation, Debugging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════ Work Experience ════════════ -->
+    <div id="experience-section" class="grid grid-cols-1 md:grid-cols-3 gap-12 relative pt-12">
+      <!-- LEFT COLUMN -->
+      <div class="md:col-span-1 relative h-full">
+        <div class="flex items-center space-x-4 mb-4">
+          <img
+            src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Briefcase/3D/briefcase_3d.png"
+            alt="Experience" class="w-12 h-12 floating-3d drop-shadow-lg" />
+          <h2 class="text-4xl font-bold">Work Experience</h2>
+        </div>
+        <div class="h-1 w-16 bg-accent-green rounded-full mb-12"></div>
+
+        <!-- Sticky Journey Canvas — transparent bg, matches theme -->
+        <div
+          class="sticky top-28 w-full h-[62vh] rounded-3xl overflow-hidden z-10 hidden md:block border border-slate/8 shadow-md">
+          <app-journey-canvas></app-journey-canvas>
+        </div>
+      </div>
+
+      <!-- RIGHT: Experience Cards -->
+      <div class="md:col-span-2 space-y-10">
+        @for(job of experience; track job.role; let idx = $index) {
+        <div class="relative border-l-2 border-accent-teal/30 pl-8 pb-2 group" [attr.id]="'exp-' + idx">
+          <div
+            class="absolute w-5 h-5 bg-accent-teal rounded-full -left-[11px] top-1 shadow-md transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_12px_rgba(0,139,139,0.5)]">
+          </div>
+          <div
+            class="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-white/60 shadow-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(44,95,45,0.12)] hover:-translate-y-1">
+            <h3 class="text-2xl font-bold text-slate mb-1">{{ job.role }}</h3>
+            <p class="text-accent-green font-semibold mb-1">{{ job.company }}</p>
+            <p class="text-xs text-slate/50 mb-4 font-medium tracking-wide">{{ job.duration }}</p>
+            <ul class="space-y-2 text-slate/75 font-light leading-relaxed">
+              @for(point of job.points; track point) {
+              <li class="flex items-start gap-2"><span class="text-accent-teal mt-1 text-xs">▸</span>{{ point }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- ════════════ Education & Achievements ════════════ -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8 border-t border-slate/10">
+
+      <!-- Education -->
+      <div>
+        <div class="flex items-center space-x-4 mb-8">
+          <img
+            src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Graduation%20cap/3D/graduation_cap_3d.png"
+            alt="Education" class="w-12 h-12 floating-3d drop-shadow-lg" />
+          <div>
+            <h2 class="text-3xl font-bold">Education</h2>
+            <div class="h-0.5 w-12 bg-accent-teal rounded-full mt-1"></div>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div
+            class="edu-card group relative bg-gradient-to-br from-white/70 to-white/30 backdrop-blur-sm p-5 rounded-2xl border border-white/60 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,139,139,0.12)]">
+            <div
+              class="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-accent-teal to-accent-green rounded-l-2xl opacity-60 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div class="pl-3">
+              <div class="flex items-center gap-3 mb-1"><span class="text-2xl">🎓</span>
+                <h3 class="text-base font-bold text-slate">Bachelor of Technology (CSE)</h3>
+              </div>
+              <p class="text-slate/60 font-light text-sm pl-9">Guru Nanak Dev University, Amritsar</p>
+              <div class="mt-2 pl-9 flex gap-2">
+                <span
+                  class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-accent-teal/10 text-accent-teal border border-accent-teal/20">Computer
+                  Science</span>
+                <span
+                  class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">B.Tech</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="edu-card group relative bg-gradient-to-br from-white/70 to-white/30 backdrop-blur-sm p-5 rounded-2xl border border-white/60 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,139,139,0.12)]">
+            <div
+              class="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-accent-teal to-accent-green rounded-l-2xl opacity-40 group-hover:opacity-80 transition-opacity">
+            </div>
+            <div class="pl-3">
+              <div class="flex items-center gap-3 mb-1"><span class="text-2xl">📚</span>
+                <h3 class="text-base font-bold text-slate">Senior Secondary (12th)</h3>
+              </div>
+              <p class="text-slate/60 font-light text-sm pl-9">Kendriya Vidyalaya, Pathankot</p>
+              <div class="mt-2 pl-9"><span
+                  class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-secondary/80 text-slate/70 border border-slate/10">Science
+                  Stream</span></div>
+            </div>
+          </div>
+
+          <div
+            class="edu-card group relative bg-gradient-to-br from-white/70 to-white/30 backdrop-blur-sm p-5 rounded-2xl border border-white/60 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,139,139,0.12)]">
+            <div
+              class="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-accent-teal to-accent-green rounded-l-2xl opacity-25 group-hover:opacity-60 transition-opacity">
+            </div>
+            <div class="pl-3">
+              <div class="flex items-center gap-3 mb-1"><span class="text-2xl">🏫</span>
+                <h3 class="text-base font-bold text-slate">Secondary Schooling (10th)</h3>
+              </div>
+              <p class="text-slate/60 font-light text-sm pl-9">Kendriya Vidyalaya, Pathankot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div>
+        <div class="flex items-center space-x-4 mb-8">
+          <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Trophy/3D/trophy_3d.png"
+            alt="Trophy" class="w-12 h-12 floating-3d drop-shadow-lg" />
+          <div>
+            <h2 class="text-3xl font-bold">Achievements</h2>
+            <div class="h-0.5 w-12 bg-accent-green rounded-full mt-1"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <div
+            class="group relative bg-gradient-to-br from-white/60 to-secondary/30 p-5 rounded-2xl border border-white/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(44,95,45,0.15)] cursor-default overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+            </div>
+            <div class="relative z-10">
+              <img
+                src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sports%20medal/3D/sports_medal_3d.png"
+                alt="Medal" class="w-12 h-12 mb-3 floating-3d drop-shadow-md" />
+              <p class="text-slate/80 font-medium text-sm leading-snug">Employee Excellence Award at Motherson
+                Technology Services</p>
+            </div>
+          </div>
+
+          <div
+            class="group relative bg-gradient-to-br from-white/60 to-secondary/30 p-5 rounded-2xl border border-white/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(44,95,45,0.15)] cursor-default overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-accent-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+            </div>
+            <div class="relative z-10">
+              <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Rocket/3D/rocket_3d.png"
+                alt="Rocket" class="w-12 h-12 mb-3 floating-3d drop-shadow-md" />
+              <p class="text-slate/80 font-medium text-sm leading-snug">Delivered multiple enterprise-level applications
+                end-to-end</p>
+            </div>
+          </div>
+
+          <div
+            class="group relative bg-gradient-to-br from-white/60 to-secondary/30 p-5 rounded-2xl border border-white/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(44,95,45,0.15)] cursor-default overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+            </div>
+            <div class="relative z-10">
+              <img
+                src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Recycling%20symbol/3D/recycling_symbol_3d.png"
+                alt="Modernization" class="w-12 h-12 mb-3 floating-3d drop-shadow-md" />
+              <p class="text-slate/80 font-medium text-sm leading-snug">Led modernization of legacy systems to modern
+                tech stack</p>
+            </div>
+          </div>
+
+          <div
+            class="group relative bg-gradient-to-br from-white/60 to-secondary/30 p-5 rounded-2xl border border-white/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(44,95,45,0.15)] cursor-default overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-accent-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+            </div>
+            <div class="relative z-10">
+              <img
+                src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Teacher/3D/teacher_3d.png"
+                alt="Mentor" class="w-12 h-12 mb-3 floating-3d drop-shadow-md" />
+              <p class="text-slate/80 font-medium text-sm leading-snug">Mentored junior developers, improved team
+                productivity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

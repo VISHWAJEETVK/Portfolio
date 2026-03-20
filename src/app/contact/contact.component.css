@@ -1,0 +1,33 @@
+.contact-section {
+  background: linear-gradient(135deg, #F4F7F5 0%, #E1E8E3 100%);
+  position: relative;
+}
+
+/* Mouse-following spotlight */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 139, 139, 0.07),
+    transparent 60%
+  );
+  pointer-events: none;
+  transition: background 0.05s;
+  z-index: 1;
+}
+
+/* Contact card lift to 3D on hover */
+.contact-card {
+  transform: translateY(0) scale(1);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.35s ease;
+  will-change: transform;
+}
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 50px rgba(44, 95, 45, 0.14), 0 0 0 1px rgba(255,255,255,0.6);
+}
+.contact-card:active {
+  transform: translateY(-2px) scale(0.99);
+}

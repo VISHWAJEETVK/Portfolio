@@ -1,0 +1,140 @@
+<section class="contact-section relative overflow-hidden py-28 px-6 md:px-12 lg:px-24"
+         (mousemove)="onMouseMove($event)"
+         [style.--mx]="mouseX + '%'"
+         [style.--my]="mouseY + '%'">
+
+  <!-- Spotlight follow -->
+  <div class="spotlight pointer-events-none"></div>
+
+  <!-- Decorative blobs -->
+  <div class="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full opacity-10"
+       style="background: radial-gradient(circle, #008B8B, transparent 70%);"></div>
+  <div class="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full opacity-10"
+       style="background: radial-gradient(circle, #2C5F2D, transparent 70%);"></div>
+
+  <div class="max-w-4xl mx-auto text-center space-y-14 relative z-10">
+    
+    <!-- Heading -->
+    <div>
+      <p class="text-xs font-bold tracking-[0.3em] uppercase text-accent-teal mb-4">Ready to collaborate?</p>
+      <h2 class="text-5xl md:text-7xl font-bold text-slate leading-tight mb-5">
+        Let's <span class="text-gradient">Work Together</span>
+      </h2>
+      <div class="h-1 w-24 bg-gradient-to-r from-accent-teal to-accent-green rounded-full mx-auto mb-6"></div>
+      <p class="text-lg md:text-xl font-light text-slate/70 leading-relaxed max-w-2xl mx-auto">
+        I'm always open to discussing new opportunities, innovative projects, or ideas.
+        Whether you're building something from scratch or need a trusted technical partner —
+        <span class="text-accent-green font-medium">let's connect.</span>
+      </p>
+    </div>
+
+    <!-- Contact Cards Row -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+
+      <!-- Email card -->
+      <div class="contact-card group relative w-full md:w-72 bg-white/60 backdrop-blur-md rounded-3xl border border-white/70 shadow-lg overflow-hidden cursor-pointer"
+           (click)="copyEmail()">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <!-- Top accent -->
+        <div class="h-1 w-full bg-gradient-to-r from-accent-teal to-sky-400"></div>
+        <div class="p-7 relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-teal/20 to-sky-400/10 flex items-center justify-center mb-4 mx-auto transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-inner border border-accent-teal/20">
+            <svg class="w-7 h-7 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-bold tracking-widest uppercase text-slate/40 mb-2">Email</p>
+          <a href="mailto:vishwajeetvk17@gmail.com"
+             class="text-sm font-semibold text-slate hover:text-accent-teal transition-colors block mb-4"
+             (click)="$event.stopPropagation()">
+            vishwajeetvk17&#64;gmail.com
+          </a>
+          <!-- Copy button / feedback -->
+          <div class="flex items-center justify-center gap-2 py-2 px-4 rounded-xl transition-all duration-300"
+               [class.bg-accent-teal]="emailCopied"
+               [class.bg-slate]="!emailCopied"
+               [class.bg-opacity-10]="!emailCopied">
+            @if (emailCopied) {
+              <svg class="w-4 h-4 text-accent-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-xs font-bold text-accent-teal">Copied!</span>
+            } @else {
+              <svg class="w-4 h-4 text-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span class="text-xs font-medium text-slate/40">Click to copy</span>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider dot -->
+      <div class="hidden md:flex flex-col items-center gap-2 opacity-30">
+        <div class="w-1.5 h-1.5 rounded-full bg-accent-teal"></div>
+        <div class="w-1 h-1 rounded-full bg-accent-teal"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-accent-teal"></div>
+      </div>
+
+      <!-- Phone card -->
+      <div class="contact-card group relative w-full md:w-72 bg-white/60 backdrop-blur-md rounded-3xl border border-white/70 shadow-lg overflow-hidden cursor-pointer"
+           (click)="copyPhone()">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="h-1 w-full bg-gradient-to-r from-accent-green to-emerald-400"></div>
+        <div class="p-7 relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-green/20 to-emerald-400/10 flex items-center justify-center mb-4 mx-auto transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 shadow-inner border border-accent-green/20">
+            <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-bold tracking-widest uppercase text-slate/40 mb-2">Phone</p>
+          <a href="tel:+918210147086"
+             class="text-sm font-semibold text-slate hover:text-accent-green transition-colors block mb-4"
+             (click)="$event.stopPropagation()">
+            +91 8210147086
+          </a>
+          <div class="flex items-center justify-center gap-2 py-2 px-4 rounded-xl transition-all duration-300"
+               [class.bg-accent-green]="phoneCopied"
+               [class.bg-slate]="!phoneCopied"
+               [class.bg-opacity-10]="!phoneCopied">
+            @if (phoneCopied) {
+              <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-xs font-bold text-accent-green">Copied!</span>
+            } @else {
+              <svg class="w-4 h-4 text-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              <span class="text-xs font-medium text-slate/40">Click to copy</span>
+            }
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Location -->
+    <div class="flex items-center justify-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-white/60 border border-white/70 flex items-center justify-center shadow-sm">
+        <svg class="w-4 h-4 text-accent-teal" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <span class="text-slate/60 font-medium text-sm tracking-wide">Noida, India</span>
+    </div>
+
+    <!-- Footer tagline -->
+    <div class="pt-16 mt-8 border-t border-slate/10">
+      <h3 class="text-2xl md:text-3xl font-light italic text-slate/45">
+        "Engineering Performance, Delivering Excellence"
+      </h3>
+      <p class="text-xs text-slate/25 mt-4">© 2026 Vishwajeet</p>
+    </div>
+
+  </div>
+</section>

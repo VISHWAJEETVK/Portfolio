@@ -1,0 +1,24 @@
+.project-card-wrapper {
+  perspective: 1800px;
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.project-card-wrapper:hover .project-card {
+  transform: rotateX(4deg) rotateY(-4deg) scale3d(1.01, 1.01, 1.01);
+  box-shadow: -8px 20px 50px rgba(44, 95, 45, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Floating animation for project images */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+.floating-3d {
+  animation: float 5s ease-in-out infinite;
+}

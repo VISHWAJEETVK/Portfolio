@@ -1,0 +1,8 @@
+<div #wrapper class="h-[500vh] relative w-full bg-primary">
+  <div class="sticky top-0 h-screen w-full overflow-hidden">
+    <!-- The canvas fills the container -->
+    <canvas #canvasRef class="block w-full h-full object-cover"></canvas>
+    <!-- Overlay sits on top of canvas inside the sticky container -->
+    <ng-content></ng-content>
+  </div>
+</div>

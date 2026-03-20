@@ -1,0 +1,26 @@
+<!-- Fixed Top-Right Download Button -->
+<a href="assets/resume/VISHWAJEET%20RESUME.pdf" download="Vishwajeet_Resume.pdf"
+  class="fixed top-6 right-6 md:top-8 md:right-8 z-50 flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 text-accent-green font-bold text-sm tracking-wide transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(44,95,45,0.25)] hover:scale-105 active:scale-95 cursor-pointer group">
+  <span>Resume</span>
+  <svg class="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+  </svg>
+</a>
+
+<!-- 1. The ScrollyCanvas contains the 500vh scroll container -->
+<div class="relative w-full">
+  <app-scrolly-canvas>
+    <app-overlay></app-overlay>
+  </app-scrolly-canvas>
+  <!-- Smooth gradient blending into the next section -->
+  <div class="pointer-events-none absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-primary to-transparent z-20"></div>
+</div>
+
+<!-- 2. Resume / About Me / Skills / Experience -->
+<app-resume></app-resume>
+
+<!-- 3. Projects Grid -->
+<app-projects></app-projects>
+
+<!-- 4. Contact Footer -->
+<app-contact></app-contact>
