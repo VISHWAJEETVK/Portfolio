@@ -12,13 +12,13 @@ export class ProjectsComponent {
   projects = [
     {
       title: 'CAF',
-      category: 'Microservices Architecture',
-      description: 'Designed scalable microservices architecture. Integrated Redis caching to significantly improve performance. Developed secure authentication using JWT, SSO, and Okta. Enabled real-time database replication using Kafka and Debezium.',
+      category: 'Low-code/no-code (LCNC) platform',
+      description: 'Designed scalable microservices architecture for Low-code/no-code (LCNC) application which accelerate application development for multiple applications. Developed secure authentication using JWT, SSO, and Okta. Enabled real-time database replication using Kafka and Debezium.',
       image: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Desktop%20computer/3D/desktop_computer_3d.png',
       bgFrom: '#0d4f6b',
       bgTo: '#1a7a8a',
       accentRgb: '0, 139, 139',
-      tags: ['Java', 'Spring Boot', 'Kafka', 'Redis', 'JWT', 'Okta']
+      tags: ['Java', 'Spring Boot', 'Kafka', 'JWT', 'Okta']
     },
     {
       title: 'CCS',
@@ -38,17 +38,17 @@ export class ProjectsComponent {
       bgFrom: '#1a4a2e',
       bgTo: '#2d7a50',
       accentRgb: '44, 95, 45',
-      tags: ['Angular 18', 'Highcharts', 'Java 17', 'PostgreSQL', 'PDF/Excel']
+      tags: ['Angular 18', 'Highcharts', 'Java 17', 'PostgreSQL', 'PDF/Excel Export','Chart JS','Ag-Grid']
     },
     {
       title: 'FMS',
-      category: 'Finance Management System',
+      category: 'Fund Management System',
       description: 'Built a fund management application for the South Asia region. Engineered with Angular 18, Java 17, and Spring Boot 3.2.6. Developed complex finance calculation engines, interactive dashboards, and custom Excel import/export functionalities.',
       image: 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Money%20bag/3D/money_bag_3d.png',
       bgFrom: '#4a3000',
       bgTo: '#7a5200',
       accentRgb: '245, 158, 11',
-      tags: ['Angular 18', 'Spring Boot 3', 'Finance Engine', 'Java 17', 'Excel']
+      tags: ['Angular 18', 'Spring Boot 3', 'Java 17', 'Apache POI Excel','iText PDF']
     }
   ];
 }
