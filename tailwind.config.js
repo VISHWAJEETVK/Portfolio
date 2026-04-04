@@ -1,18 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{html,ts}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#F4F7F5', // Off-white with a hint of mint
-        secondary: '#E1E8E3', // Soft Sage
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: {
-          green: '#2C5F2D', // Forest Green
-          teal: '#008B8B', // Dark Cyan / Teal
+          green: 'rgb(var(--color-accent-green) / <alpha-value>)',
+          teal: 'rgb(var(--color-accent-teal) / <alpha-value>)',
         },
-        slate: '#2F4F4F', // Dark Slate Grey
+        slate: 'rgb(var(--color-slate) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'San Francisco', 'sans-serif'],

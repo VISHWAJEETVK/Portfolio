@@ -1,4 +1,4 @@
-<section class="contact-section relative overflow-hidden py-28 px-6 md:px-12 lg:px-24" (mousemove)="onMouseMove($event)"
+<section class="contact-section bg-gradient-to-br from-primary to-secondary relative overflow-hidden py-28 px-6 md:px-12 lg:px-24" (mousemove)="onMouseMove($event)"
   [style.--mx]="mouseX + '%'" [style.--my]="mouseY + '%'">
 
   <!-- Spotlight follow -->
@@ -31,7 +31,7 @@
 
       <!-- Email card -->
       <div
-        class="contact-card group relative w-full md:w-72 bg-white/60 backdrop-blur-md rounded-3xl border border-white/70 shadow-lg overflow-hidden cursor-pointer"
+        class="contact-card group relative w-full md:w-72 bg-secondary/60 backdrop-blur-md rounded-3xl border border-slate/10 shadow-lg overflow-hidden cursor-pointer"
         (click)="copyEmail()">
         <div
           class="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -73,7 +73,7 @@
 
       <!-- LinkedIn card -->
       <div
-        class="contact-card group relative w-full md:w-72 bg-white/60 backdrop-blur-md rounded-3xl border border-white/70 shadow-lg overflow-hidden cursor-pointer"
+        class="contact-card group relative w-full md:w-72 bg-secondary/60 backdrop-blur-md rounded-3xl border border-slate/10 shadow-lg overflow-hidden cursor-pointer"
         (click)="copyLinkedIn()">
         <div
           class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -114,7 +114,7 @@
 
       <!-- Instagram card -->
       <div
-        class="contact-card group relative w-full md:w-72 bg-white/60 backdrop-blur-md rounded-3xl border border-white/70 shadow-lg overflow-hidden cursor-pointer"
+        class="contact-card group relative w-full md:w-72 bg-secondary/60 backdrop-blur-md rounded-3xl border border-slate/10 shadow-lg overflow-hidden cursor-pointer"
         (click)="copyInstagram()">
         <div
           class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -157,7 +157,7 @@
 
     <!-- Location -->
     <div class="flex items-center justify-center gap-3">
-      <div class="w-8 h-8 rounded-full bg-white/60 border border-white/70 flex items-center justify-center shadow-sm">
+      <div class="w-8 h-8 rounded-full bg-secondary/60 border border-slate/10 flex items-center justify-center shadow-sm">
         <svg class="w-4 h-4 text-accent-teal" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd"
             d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"

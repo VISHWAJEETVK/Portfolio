@@ -5,8 +5,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: 244 247 245; /* #F4F7F5 */
+    --color-secondary: 225 232 227; /* #E1E8E3 */
+    --color-accent-green: 44 95 45; /* #2C5F2D */
+    --color-accent-teal: 0 139 139; /* #008B8B */
+    --color-slate: 47 79 79; /* #2F4F4F */
+  }
+
+  .dark {
+    --color-primary: 15 23 42; /* #0f172a (dark slate wrapper) */
+    --color-secondary: 30 41 59; /* #1e293b (lighter dark slate) */
+    --color-accent-green: 74 222 128; /* #4ade80 (bright green) */
+    --color-accent-teal: 45 212 191; /* #2dd4bf (bright teal) */
+    --color-slate: 248 250 252; /* #f8fafc (light text) */
+  }
+
   body {
-    @apply bg-primary text-slate font-sans;
+    @apply bg-primary text-slate font-sans transition-colors duration-500;
     margin: 0;
     overflow-x: hidden;
   }

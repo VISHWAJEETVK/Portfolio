@@ -1,5 +1,4 @@
 .contact-section {
-  background: linear-gradient(135deg, #F4F7F5 0%, #E1E8E3 100%);
   position: relative;
 }
 
@@ -9,7 +8,7 @@
   inset: 0;
   background: radial-gradient(
     600px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(0, 139, 139, 0.07),
+    rgb(var(--color-accent-teal) / 0.07),
     transparent 60%
   );
   pointer-events: none;
@@ -26,7 +25,7 @@
 }
 .contact-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 24px 50px rgba(44, 95, 45, 0.14), 0 0 0 1px rgba(255,255,255,0.6);
+  box-shadow: 0 24px 50px rgb(var(--color-accent-green) / 0.14), 0 0 0 1px rgb(var(--color-slate) / 0.1);
 }
 .contact-card:active {
   transform: translateY(-2px) scale(0.99);
