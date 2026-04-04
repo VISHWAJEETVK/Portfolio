@@ -1,3 +1,10 @@
+<!-- Global Background Floating Orbs -->
+<div class="fixed inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
+  <div #orb1 class="absolute top-0 left-0 w-[400px] h-[400px] bg-accent-teal/40 dark:bg-accent-teal/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 will-change-transform transition-colors duration-700"></div>
+  <div #orb2 class="absolute top-0 left-0 w-[600px] h-[600px] bg-accent-green/30 dark:bg-accent-green/15 rounded-full blur-[140px] -translate-x-1/2 -translate-y-1/2 will-change-transform transition-colors duration-700"></div>
+</div>
+
+<div class="relative z-10 w-full">
 <!-- Dark Theme Toggle (Top Left) -->
 <button (click)="toggleTheme()"
   class="fixed top-6 left-6 md:top-8 md:left-8 z-50 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white/80 dark:bg-slate/80 backdrop-blur-md rounded-full shadow-lg border border-slate/10 text-slate transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer">
@@ -41,3 +48,5 @@
 
 <!-- 4. Contact Footer -->
 <app-contact></app-contact>
+
+</div>
