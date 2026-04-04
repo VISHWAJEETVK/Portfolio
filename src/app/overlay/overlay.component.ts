@@ -20,7 +20,7 @@ export class OverlayComponent implements OnInit {
       setTimeout(() => {
         this.showRotateIntro = false;
         setTimeout(() => this.renderRotateIntro = false, 1000); // 1s fade out duration
-      }, 5000);
+      }, 3000); // Total duration 3 seconds
     }
   }
 
