@@ -71,7 +71,7 @@ export class DeskSceneComponent implements AfterViewInit, OnDestroy {
     textureLoader.load('../../assets/images/2-removebg.png', (texture) => {
       // Automatic aspect ratio matching prevents any clipping/stretching
       const aspect = texture.image.width / texture.image.height;
-      const height = 12; // Base height scale
+      const height = 8.4; // Scaled down by ~30%
       const width = height * aspect;
       
       const geo = new THREE.PlaneGeometry(width, height);
@@ -112,6 +112,9 @@ export class DeskSceneComponent implements AfterViewInit, OnDestroy {
 
     // React to mouse movements slightly
     if (this.avatarMesh) {
+      const baseScale = window.innerWidth < 768 ? 0.5 : 1.0;
+      this.avatarMesh.scale.setScalar(baseScale);
+
       this.avatarMesh.position.x = this.targetX * 0.5;
       this.avatarMesh.position.y = Math.sin(t * 1.5) * 0.2 - (this.targetY * 0.5);
       this.avatarMesh.rotation.y = this.targetX * 0.2;

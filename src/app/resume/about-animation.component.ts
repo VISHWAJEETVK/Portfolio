@@ -126,7 +126,8 @@ export class AboutAnimationComponent implements AfterViewInit, OnDestroy {
       this.avatarMesh.rotation.set(0, 0, 0);
 
       // On scroll down, dissolve and slightly decrease size
-      const scale = Math.max(0.5, 1 - (sp * 0.3)); // Shrink size slightly
+      const baseScale = window.innerWidth < 768 ? 0.6 : 1.0;
+      const scale = Math.max(0.5, 1 - (sp * 0.3)) * baseScale; // Shrink size slightly
       this.avatarMesh.scale.set(scale, scale, scale);
 
       // Fade out based on scroll progress

@@ -106,6 +106,10 @@ export class JourneyCanvasComponent implements AfterViewInit, OnDestroy {
 
     if (this.avatarMesh) {
       const sp = this.scrollProgress;
+      
+      const baseScale = window.innerWidth < 768 ? 0.2 : 1.0;
+      this.avatarMesh.scale.setScalar(baseScale);
+
       // Slowly float vertically based on scroll progress so it tracks alongside the work history cards
       this.avatarMesh.position.y = (sp * -8) + Math.sin(t * 2) * 0.2;
       this.avatarMesh.rotation.y = Math.sin(t * 1) * 0.1;

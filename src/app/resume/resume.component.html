@@ -131,27 +131,30 @@
       </div>
     </div>
 
-    <!-- ════════════ Work Experience ════════════ -->
-    <div id="experience-section" class="grid grid-cols-1 md:grid-cols-3 gap-12 relative pt-12">
-      <!-- LEFT COLUMN -->
-      <div class="md:col-span-1 relative h-full">
-        <div class="flex items-center space-x-4 mb-4">
-          <img
-            src="../../assets/images/briefcase_3d.png"
-            alt="Experience" class="w-12 h-12 floating-3d drop-shadow-lg" />
-          <h2 class="text-4xl font-bold">Work Experience</h2>
-        </div>
-        <div class="h-1 w-16 bg-accent-green rounded-full mb-12"></div>
+    <!-- ════════════ Work Experience Header ════════════ -->
+    <div class="pt-12 mb-8">
+      <div class="flex items-center space-x-4 mb-4">
+        <img
+          src="assets/images/briefcase_3d.png"
+          alt="Experience" class="w-12 h-12 floating-3d drop-shadow-lg" />
+        <h2 class="text-4xl font-bold">Work Experience</h2>
+      </div>
+      <div class="h-1 w-16 bg-accent-green rounded-full mb-4"></div>
+    </div>
 
+    <!-- ════════════ Work Experience Grid ════════════ -->
+    <div id="experience-section" class="grid grid-cols-[10%_90%] md:grid-cols-3 gap-4 md:gap-12 relative">
+      <!-- LEFT COLUMN -->
+      <div class="relative h-full">
         <!-- Sticky Journey Canvas — transparent bg, matches theme -->
         <div
-          class="sticky top-28 w-full h-[62vh] z-10 hidden md:block">
+          class="sticky top-28 w-full h-[50vh] md:h-[62vh] z-10 block">
           <app-journey-canvas></app-journey-canvas>
         </div>
       </div>
 
       <!-- RIGHT: Experience Cards -->
-      <div class="md:col-span-2 space-y-10">
+      <div class="md:col-span-2 space-y-6 md:space-y-10 pl-2 md:pl-0">
         @for(job of experience; track job.role; let idx = $index) {
         <div class="relative border-l-2 border-accent-teal/30 pl-8 pb-2 group" [attr.id]="'exp-' + idx">
           <div
