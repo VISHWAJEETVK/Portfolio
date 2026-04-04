@@ -2,14 +2,16 @@
 
   <!-- Subtle decorative blobs -->
   <div class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 bg-accent-teal/5 rounded-full blur-3xl"></div>
-  <div class="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 bg-accent-green/5 rounded-full blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 bg-accent-green/5 rounded-full blur-3xl">
+  </div>
 
   <div class="max-w-7xl mx-auto relative z-10">
 
     <!-- Section Header -->
     <div class="flex flex-col items-center mb-16 space-y-4">
       <p class="text-xs font-bold tracking-[0.3em] uppercase text-accent-teal">Portfolio</p>
-      <h2 class="text-4xl md:text-6xl font-bold text-slate text-center leading-tight">Selected <span class="text-gradient">Works</span></h2>
+      <h2 class="text-4xl md:text-6xl font-bold text-slate text-center leading-tight">Professional <span
+          class="text-gradient">Works</span></h2>
       <div class="h-1 w-24 bg-gradient-to-r from-accent-teal to-accent-green rounded-full"></div>
       <!-- <p class="text-slate/55 font-light text-center max-w-lg text-sm">A curated selection of enterprise applications built with passion and precision.</p> -->
     </div>
@@ -17,63 +19,73 @@
     <!-- Project Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
       @for (project of projects; track project.title) {
-        <div class="project-card-wrapper">
-          <div class="project-card group relative overflow-hidden rounded-3xl bg-secondary/50 backdrop-blur-md border border-slate/10 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col"
-               [style.--accent]="project.accentRgb">
-            
-            <!-- Top Image Area -->
-            <div class="relative w-full overflow-hidden flex-shrink-0" style="height: 220px;">
-              <!-- Background gradient matching project accent -->
-              <div class="absolute inset-0 transition-opacity duration-500"
-                   [ngStyle]="{'background': 'linear-gradient(135deg, ' + project.bgFrom + ', ' + project.bgTo + ')'}"></div>
-              
-              <!-- Grid lines subtle texture -->
-              <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 28px 28px;"></div>
+      <div class="project-card-wrapper">
+        <div
+          class="project-card group relative overflow-hidden rounded-3xl bg-secondary/50 backdrop-blur-md border border-slate/10 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer flex flex-col"
+          [style.--accent]="project.accentRgb">
 
-              <!-- Glowing 3D image with parallax on hover -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <img [src]="project.image"
-                     [alt]="project.title"
-                     class="w-40 h-40 object-contain floating-3d drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]" />
-              </div>
+          <!-- Top Image Area -->
+          <div class="relative w-full overflow-hidden flex-shrink-0" style="height: 220px;">
+            <!-- Background gradient matching project accent -->
+            <div class="absolute inset-0 transition-opacity duration-500"
+              [ngStyle]="{'background': 'linear-gradient(135deg, ' + project.bgFrom + ', ' + project.bgTo + ')'}"></div>
 
-              <!-- Category badge -->
-              <div class="absolute top-4 left-4">
-                <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-md border"
-                      [ngStyle]="{'background': 'rgba(255,255,255,0.25)', 'border-color': 'rgba(255,255,255,0.4)', 'color': 'white'}">
-                  {{ project.category }}
-                </span>
-              </div>
-
-              <!-- Animated corner accent -->
-              <div class="absolute bottom-0 right-0 w-20 h-20 rounded-tl-3xl opacity-30 transition-all duration-500 group-hover:opacity-50 group-hover:w-28 group-hover:h-28"
-                   [ngStyle]="{'background': 'rgba(255,255,255,0.15)'}"></div>
+            <!-- Grid lines subtle texture -->
+            <div class="absolute inset-0 opacity-20"
+              style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 28px 28px;">
             </div>
 
-            <!-- Card content -->
-            <div class="p-6 flex flex-col flex-grow">
-              <div class="flex items-start justify-between mb-3">
-                <h3 class="text-2xl font-bold text-slate group-hover:text-accent-green transition-colors duration-300">{{ project.title }}</h3>
-                <!-- Arrow icon -->
-                <div class="w-8 h-8 rounded-full border border-slate/15 flex items-center justify-center flex-shrink-0 ml-3 transition-all duration-300 group-hover:bg-accent-green group-hover:border-accent-green group-hover:rotate-45">
-                  <svg class="w-3.5 h-3.5 text-slate/40 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10"></path>
-                  </svg>
-                </div>
-              </div>
-
-              <p class="text-slate/65 font-light leading-relaxed text-sm flex-grow">{{ project.description }}</p>
-
-              <!-- Tech tags -->
-              <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate/8">
-                @for (tag of project.tags; track tag) {
-                  <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-secondary/80 text-slate/60 border border-slate/8 hover:border-accent-teal/30 hover:text-accent-teal transition-colors duration-200">{{ tag }}</span>
-                }
-              </div>
+            <!-- Glowing 3D image with parallax on hover -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img [src]="project.image" [alt]="project.title"
+                class="w-40 h-40 object-contain floating-3d drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]" />
             </div>
 
+            <!-- Category badge -->
+            <div class="absolute top-4 left-4">
+              <span
+                class="text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-md border"
+                [ngStyle]="{'background': 'rgba(255,255,255,0.25)', 'border-color': 'rgba(255,255,255,0.4)', 'color': 'white'}">
+                {{ project.category }}
+              </span>
+            </div>
+
+            <!-- Animated corner accent -->
+            <div
+              class="absolute bottom-0 right-0 w-20 h-20 rounded-tl-3xl opacity-30 transition-all duration-500 group-hover:opacity-50 group-hover:w-28 group-hover:h-28"
+              [ngStyle]="{'background': 'rgba(255,255,255,0.15)'}"></div>
           </div>
+
+          <!-- Card content -->
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-2xl font-bold text-slate group-hover:text-accent-green transition-colors duration-300">{{
+                project.title }}</h3>
+              <!-- Arrow icon -->
+              <div
+                class="w-8 h-8 rounded-full border border-slate/15 flex items-center justify-center flex-shrink-0 ml-3 transition-all duration-300 group-hover:bg-accent-green group-hover:border-accent-green group-hover:rotate-45">
+                <svg class="w-3.5 h-3.5 text-slate/40 group-hover:text-white transition-colors duration-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7v10">
+                  </path>
+                </svg>
+              </div>
+            </div>
+
+            <p class="text-slate/65 font-light leading-relaxed text-sm flex-grow">{{ project.description }}</p>
+
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate/8">
+              @for (tag of project.tags; track tag) {
+              <span
+                class="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-secondary/80 text-slate/60 border border-slate/8 hover:border-accent-teal/30 hover:text-accent-teal transition-colors duration-200">{{
+                tag }}</span>
+              }
+            </div>
+          </div>
+
         </div>
+      </div>
       }
     </div>
 
