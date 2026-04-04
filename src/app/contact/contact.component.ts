@@ -11,6 +11,8 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 export class ContactComponent {
   emailCopied = false;
   phoneCopied = false;
+  linkedInCopied = false;
+  instagramCopied = false;
   mouseX = 50;
   mouseY = 50;
 
@@ -37,6 +39,22 @@ export class ContactComponent {
       navigator.clipboard.writeText('+918210147086').catch(() => {});
       this.phoneCopied = true;
       setTimeout(() => this.phoneCopied = false, 2200);
+    }
+  }
+
+  copyLinkedIn() {
+    if (isPlatformBrowser(this.pid)) {
+      navigator.clipboard.writeText('www.linkedin.com/in/vishwajeetvk1701').catch(() => {});
+      this.linkedInCopied = true;
+      setTimeout(() => this.linkedInCopied = false, 2200);
+    }
+  }
+
+  copyInstagram() {
+    if (isPlatformBrowser(this.pid)) {
+      navigator.clipboard.writeText('vishwajeet_vk').catch(() => {});
+      this.instagramCopied = true;
+      setTimeout(() => this.instagramCopied = false, 2200);
     }
   }
 }

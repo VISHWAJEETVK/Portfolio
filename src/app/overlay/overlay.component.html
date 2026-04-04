@@ -1,5 +1,15 @@
 <div class="pointer-events-none absolute inset-0 z-10 w-full h-screen overflow-hidden text-center">
   
+  <!-- Rotate Phone Intro -->
+  <div *ngIf="renderRotateIntro"
+       class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 pointer-events-auto transition-opacity duration-1000 md:hidden portrait:flex landscape:hidden"
+       [class.opacity-0]="!showRotateIntro"
+       [class.opacity-100]="showRotateIntro">
+    <img src="../../assets/images/rotate_phone.png" alt="Rotate Phone" 
+         class="w-32 h-32 mb-6 object-contain rotate-anim" />
+    <h2 class="text-white text-3xl font-bold tracking-wider mb-2">Please Rotate</h2>
+    <p class="text-white/70 text-lg">Rotate your phone for the best experience</p>
+  </div>
   <!-- Section 1: Center -->
   <div 
     class="absolute top-1/2 left-1/2 w-full px-4"

@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 
 @Component({
@@ -8,10 +8,21 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.css']
 })
-export class OverlayComponent {
+export class OverlayComponent implements OnInit {
   public scrollFraction = 0;
+  public showRotateIntro = true;
+  public renderRotateIntro = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.showRotateIntro = false;
+        setTimeout(() => this.renderRotateIntro = false, 1000); // 1s fade out duration
+      }, 5000);
+    }
+  }
 
   @HostListener('window:scroll')
   onScroll() {
